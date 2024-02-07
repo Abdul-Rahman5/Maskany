@@ -1,0 +1,314 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+
+/* ================= Global Style Rules ================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Rubik", sans-serif !important;
+}
+
+::-webkit-scrollbar {
+  background-color: transparent;
+  scroll-behavior: smooth;
+  height: 0.4rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #9b927d;
+  scroll-behavior: smooth;
+  height: 0.3rem;
+  border-radius: 12px;
+}
+.mainColor{
+  color: #9b927d;
+}
+.mainWith{
+  width: 85%;
+}
+.mainBg{
+  background-color:  #9b927d;
+}
+.mainbutton{
+  border: 0;
+  color: white;
+  background-color:  #9b927d;
+}
+.scButton{
+  border: 0;
+  color:#9C917D;
+  background-color: #D2D2D2;
+}
+.text-shad{
+  text-shadow:1px 0 2px #9b927d;
+}
+.mainFont{
+  font-size: 14px;
+}
+.container {
+  margin: 0 auto;
+}
+
+.h-100 {
+  height: 100vh;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.row .col-12 {
+  width: 100%;
+}
+
+.row .col-6 {
+  width: 50%;
+}
+
+.layerSearch{
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(3px);
+  z-index: 99999999999999999;
+}
+.undBorder{
+  border-bottom: 1px solid #D2D2D2;
+}
+/* search  */
+.filtter{
+  border: 2px solid #D2D2D2;
+  border-radius: 10px 0px 0 10px ;
+
+}
+.filtter .mainBrdBo{
+  border-bottom: 2px solid #D2D2D2;
+ width: 40%;
+
+}
+.boderAll{
+  border-bottom: 2px solid #D2D2D2;
+
+}
+.mainFont{
+  font-size: 12px;
+}
+.mainBoder{
+  border-radius: 10px 0 0 10px  !important;
+  -webkit-border-radius: 10px 0 0 10px  !important;
+  -moz-border-radius: 10px 0 0 10px  !important;
+  -ms-border-radius: 10px 0 0 10px  !important;
+  -o-border-radius: 10px 0 0 10px  !important;
+  height: 100%;
+}
+.ActivButton:focus{
+ color: #9b927d;
+ font-size: 15px;
+}
+/* Style for the radio container */
+.radio-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Style for the actual radio button */
+.radio-container input {
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Style for the custom checkmark (the square) */
+.checkmark {
+  height: 15px; /* تعيين الطول */
+  width: 15px; /* تعيين العرض */
+  background-color: #9b927d;
+  border: none; /* إزالة الحدود */
+  border-radius: 2px; /* إضافة زوايا مستديرة */
+  margin-right: 8px; /* تعيين المسافة بين الزر والكلمة */
+}
+
+/* On mouse over, add a different background color */
+.radio-container:hover input ~ .checkmark {
+  background-color: #9b927d;
+}
+
+/* When the radio button is checked, change the color of the checkmark */
+.radio-container input:checked ~ .checkmark {
+  background-color:  #9b927d;
+}
+
+/* Style for the checkmark when it's inside a checked radio button */
+.radio-container input:checked ~ .checkmark:after {
+  content: '\2713'; /* Unicode checkmark symbol */
+  color: white;
+  font-size: 16px;
+  display: block;
+  text-align: center;
+  line-height: 15px; /* تعيين الارتفاع للتأكد من توسيط العلامة */
+}
+/* end search */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.mainColor {
+  color: #9c917d;
+}
+.scnColor {
+  color: #b6b6b6;
+}
+.colorDef {
+  color: var(--main-color);
+}
+.mainButton {
+  color: #fff;
+  text-decoration: none;
+  list-style: none;
+  background-color: var(--main-color);
+  border: none;
+}
+.bgMian{
+  background-color: var(--main-color);
+}
+
+/* Confirm */
+.layout {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.075);
+  left: 0;
+  bottom: 0%;
+  right: 0%;
+  top: 0;
+  padding: 20px;
+  filter: blur(4px);
+  z-index: 10;
+  -webkit-filter: blur(4px);
+}
+.layer {
+  background-color: rgba(0, 0, 0, 0.075);
+  filter: blur(4px);
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+.boxInFor  {
+  position: relative !important;
+  z-index: 1000000000000000 !important;
+  top: 150px;
+}
+@media screen and (max-width: 992px) {
+  .fixeW {
+    width: 40%;
+  }
+  .boxInFor {
+    width: 50% !important;
+  }
+  .scNavbar {
+    background-color: tomato !important;
+    display: none !important;
+  }
+  /* nav */
+  .mobilnav {
+    opacity: 1;
+  }
+  .underLine {
+    opacity: 1;
+  }
+  .itemMap {
+    display: none;
+  }
+  .navbar {
+    border: none !important;
+  }
+  /* map mobile */
+  .mobilMap {
+    opacity: 1;
+  }
+
+  /* start favorite */
+  .favorite{
+display: none;
+  }
+  .favorite h3{
+
+display: flex;
+justify-content: center;
+  }
+  .favorite {
+
+padding: 0 !important;
+margin: 0 !important;
+  }
+  .favoriteMobil{
+
+    display: flex;
+
+  }
+}
+
+@media screen and (max-width: 789px) {
+  .fixeW {
+    width: 50%;
+  }
+  .boxInFor {
+    width: 70% !important;
+  }
+}
+@media screen and (max-width: 500px) {
+  .fixeW {
+    width: 70%;
+  }
+}
+@media screen and (max-width: 550px) {
+  .fixeW {
+    width: 90%;
+  }
+  .smallFont {
+    font-size: 16px;
+  }
+  .smallFontOne {
+    font-size: 13px !important;
+  }
+  .smallFontWatch {
+    font-size: 15px !important;
+  }
+}
+/* Confirm */
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,123 @@
+import React, { useEffect, useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import { useFormik } from 'formik'
+import * as Yup from "yup";
+import axios from 'axios';
+import logo from "../../Assets/Images/logo.png"
+
+export default function ForGetPassword() {
+  let navigate=useNavigate();
+  let [otpNumber, setotpNumber] = useState(0)
+//messageError
+
+
+  const [messageError, setmessageError] = useState('')
+  // export { otpNumber};
+
+  //validation
+  let validationSchema=Yup.object({
+    phone:Yup.string().required(' رقم الهاتف  مطلوب'),
+  })
+  
+// send api to backend
+// async function handelLogin(values) {
+//   let response = await axios.post(`http://66.45.248.247:8000/auth/sms/`);{
+
+//   }
+
+//   // let response = await axios.post('http://66.45.248.247:8000/auth/sms/', null, {
+//   //   params: {
+//   //     phoneNumber: phoneNumber,
+//   //   }
+
+
+
+//   if (type === 'successful') {
+// console.log('Done');
+
+//     // navigate("/ForGetPasswordOne");
+//   }else{
+//   console.log('fales');
+//   }
+//   console.log(type);
+  
+//   }
+async function handleLogin(values) {
+  
+
+  let phoneNumber = values.phone; // Replace 'phoneNumber' with the actual key in your 'values' object
+console.log(phoneNumber);
+  try {
+    let {data} = await axios.get('http://66.45.248.247:8000/auth/sms/', {
+      params: {
+        phone: values.phone,
+      },
+    });
+
+    // let data = response.data;
+ console.log(data);
+    if (data.type === 'successful') {
+      localStorage.setItem('otpNumber',data.otp);
+             navigate("/otp");
+    } else {
+      console.log('Failed');
+    }
+  } catch (error) {
+    if (error.response) {
+      // The request was made and the server responded with a status code
+      // that falls out of the range of 2xx
+      console.log(error.response.data);
+      setmessageError(`${error.response.data.email} `);
+    } else if (error.request) {
+      // The request was made but no response was received
+      console.log(error.request);
+    } else {
+      // Something happened in setting up the request that triggered an Error
+      console.log('Error', error.message);
+    }
+  }
+}
+
+
+  let formik=useFormik({
+    initialValues:{
+    phone:'',
+    },validationSchema,onSubmit:handleLogin
+    });
+
+
+
+  return <div className=' w-75 m-auto pt-5 text-end mt-5'>
+  <form onSubmit={formik.handleSubmit} >
+    <div className="image  mb-5 text-center">
+
+    <img className='w-25 m-auto' src={logo} alt="" />
+    </div>
+  <h2 className='my-2'> هل نسيت كلمة المرور</h2>  
+<label  className='fs-4' htmlFor="phone">  رقم الهاتف   </label>
+<input onBlur={formik.handleBlur} onChange={formik.handleChange} value={formik.values.phone}  placeholder='اكتب رقم الهاتف ' className='form-control mt-2 mb-3 mb-2 text-end' type="tel" name="phone" id="phone" />
+
+
+
+<div className="item text-center">
+
+<button  className='px-4  mainButton rounded-2 py-1   mb-2 text-center w-100 ' type="submit"> التالي </button>
+{formik.errors.phone && formik.touched.phone?
+      <div className="w-50 m-auto text-danger bgMian fw-bolder small" role="alert">
+     {formik.errors.phone}
+    </div>:null}
+    {messageError.length >0?<div className="bgMian w-50 m-auto text-center fw-bolder text-danger small" role="alert">
+  رقم الهاتف غير صحيح او غير موجود </div>:null}
+<p >   هل تذكرة كلمة المرور الأن ؟ <Link   to="/login" className='colorDef text-decoration-none '>   الي الخلف</Link>  </p>
+
+</div>
+
+
+
+
+
+  </form>
+
+  </div>
+}
+

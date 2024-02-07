@@ -1,0 +1,38 @@
+  <div className="type d-flex flex-column ">
+          <label class="radio-container">Option 1
+        <input type="radio" name="options" />
+        <span class="checkmark"></span>
+            </label>
+            <div onClick={toggle} className="home">
+            <Link  onClick={()=> setTypeSreach('بيوت للايجار')  }   className="ActivButton text-dark  text-decoration-none "> 
+            
+           
+             
+
+
+
+
+             {/* {typesStyle==true? 
+            <i onClick={()=>{setTypesStyle(false) ; setTypesStyleFour(true) ; setTypesStyleThree(true);setTypesStyleTwo(true)}}  className="fa-solid  fa-square-check mainColor  px-2"></i>:<i onClick={()=> {setTypesStyle(true) ; setTypesStyleFour(false) ; setTypesStyleThree(false);setTypesStyleTwo(false)}   } className="fa-solid   fa-square mainColor px-2"></i> }    */}
+              بيوت للايجار  </Link>
+            </div>
+            <div onClick={toggle} className="home">
+
+            <Link onClick={()=> setTypeSreach('بيوت للبيع')}  className=" ActivButton  text-dark   text-decoration-none"> 
+
+             {/* {typesStyleTwo==true? <i onClick={()=>{setTypesStyle(true) ; setTypesStyleFour(true) ; setTypesStyleThree(true);setTypesStyleTwo(false)}}  className="fa-solid  fa-square-check mainColor  px-2"></i>:<i onClick={()=> {setTypesStyle(false) ; setTypesStyleFour(false) ; setTypesStyleThree(false);setTypesStyleTwo(true)}   }  className="fa-solid   fa-square mainColor px-2"></i> }  */}
+             بيوت للبيع </Link>
+            </div>
+            
+            <div onClick={toggle} className="home">
+            <Link onClick={()=> setTypeSreach('شقق')}   className=" text-dark ActivButton text-decoration-none"> 
+             {typesStyleThree==true? <i onClick={()=>{setTypesStyle(true) ; setTypesStyleFour(true) ; setTypesStyleThree(false);setTypesStyleTwo(true)}}  className="fa-solid  fa-square-check mainColor  px-2"></i>:<i onClick={()=> {setTypesStyle(false) ; setTypesStyleFour(false) ; setTypesStyleThree(true);setTypesStyleTwo(false)}   } className="fa-solid   fa-square mainColor px-2"></i> } شقق للايجار </Link>
+
+            </div>
+            <div onClick={toggle} className="home boderAll">
+
+            <Link onClick={()=> setTypeSreach('فيلا منفصلة')}  className=" ActivButton text-dark pb-2  text-decoration-none">  
+             {typesStyleFour==true? <i onClick={()=>{setTypesStyle(true) ; setTypesStyleFour(false) ; setTypesStyleThree(true);setTypesStyleTwo(true)}}  className="fa-solid  fa-square-check mainColor  px-2"></i>:<i onClick={()=> {setTypesStyle(false) ; setTypesStyleFour(true) ; setTypesStyleThree(false);setTypesStyleTwo(false)}   } className="fa-solid   fa-square mainColor px-2"></i> }  فيلا منفصلة </Link>
+            </div>
+
+          </div>

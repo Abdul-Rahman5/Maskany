@@ -1,0 +1,48 @@
+ <div className="item pt-3">
+          <div className=" bg-body w-50 m-auto d-flex rounded-3 shadow">
+              <div className="image p-0">
+                <img
+                  className="w-100 m-0 p-0  mainBoder"
+                  src={userhuose}
+                  alt=""
+                />
+              </div>
+              <div className="col-md-8   text-end p-4">
+                <div className="icon  mainColor fs-5 ">
+                  <i className="fas fa-light  fa-pen-to-square mx-3"></i>
+                  <Link
+                    className="mainColor text-decoration-none"
+                    to={"/delete"}
+                  >
+                    {" "}
+                    <i className="fa-solid fa-trash-can mx-3"></i>
+                  </Link>
+                </div>
+                <h5 className="fs-5">
+               wefrewfwe
+               
+                </h5>
+                <div className="price d-flex justify-content-end">
+                  <p className="mx-3 mainColor">جنية مصري</p>
+                  <p className="mx-1 mainColor">2131231</p>
+                </div>
+                <div className="iconHotl mainColor">
+                  <span>2</span>
+                  <i className="fa-solid fa-bed mx-2"></i>
+                  <span>3</span>
+
+                  <i className="fa-solid fa-bath mx-2"></i>
+                  <span>3</span>
+
+                  <i className="fa-solid fa-couch mx-2"></i>
+
+                  <span> |128م² </span>
+                </div>
+                <div className="info w-100 detils  text-end  d-flex justify-content-end">
+                  <p className="">
+                 123123123rwefewfegfvefer
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
